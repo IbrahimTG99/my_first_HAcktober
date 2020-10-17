@@ -10,3 +10,6 @@ Inayat Here,
 this is my first pull request for hacktoberfest.
 
 My name is Sameer Akhtari and this is my contribution :)
+
+FATIMA BOYS,
+here is my first pull request for hacktoberfest, PLEASE ACCEPT IT, im poor.
