@@ -4,3 +4,6 @@ Adding changes.
 
 Changes by Muzhar Hussain
 This is my first pull request for hacktoberfest.
+
+Inayat Here,
+this is my first pull request for hacktoberfest.
