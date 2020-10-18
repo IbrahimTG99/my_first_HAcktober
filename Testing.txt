@@ -18,4 +18,4 @@ Farhana here.Do accept my pull request
 
 Hi, I'm Giovanni from Italy! This is my first Hacktober ever, hope this contribution is good^^
 
-Hello, Laiba Here
+"Hacktober is the Amazing Open Source Challenge"
