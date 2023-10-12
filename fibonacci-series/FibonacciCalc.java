@@ -12,18 +12,23 @@ import java.lang.Math;
  *
  * @author sidharth
  */
-public class AlgorithmsHW3 {
+public class FibonacciCalc {
 
   /**
    * ***********************************************************************************************
    *
    * PROBLEM SET 1
-   * [10 points] fibonacci_exponential: compute nth fibonacci number with an exponential running time
-   * [10 points] fibonacci_linear: compute nth fibonacci number with an exponential running time
-   * [20 points] fibonacci_log: compute nth fibonacci number with a logarithmic running time
+   * [10 points] fibonacci_exponential: compute nth fibonacci number with an
+   * exponential running time
+   * [10 points] fibonacci_linear: compute nth fibonacci number with an
+   * exponential running time
+   * [20 points] fibonacci_log: compute nth fibonacci number with a logarithmic
+   * running time
    *
-   * [10 points] Plot a graph showing the timings to compute the first 30 fibonacci numbers using all three methods. And for the first 45 fibonacci numbers using the linear and logarithmic method.
-                 X axis should be for the fibonacci number and y axis should be for time.
+   * [10 points] Plot a graph showing the timings to compute the first 30
+   * fibonacci numbers using all three methods. And for the first 45 fibonacci
+   * numbers using the linear and logarithmic method.
+   * X axis should be for the fibonacci number and y axis should be for time.
    ************************************************************************************************
    */
   public int fibonacci_exponential(int n) {
@@ -45,7 +50,7 @@ public class AlgorithmsHW3 {
   }
 
   public int fibonacci_log(int n) {
-    int[][] F = {{1, 1}, {1, 0}};
+    int[][] F = { { 1, 1 }, { 1, 0 } };
     if (n == 0) {
       return 0;
     }
@@ -56,7 +61,7 @@ public class AlgorithmsHW3 {
   // power function to calculate F raise to power n-1
   public void power(int F[][], int n) {
     int i;
-    int M[][] = {{1, 1}, {1, 0}};
+    int M[][] = { { 1, 1 }, { 1, 0 } };
     // n - 1 times multiply the matrix to {{1,0},{0,1}}
     for (i = 2; i <= n; i++) {
       multiply(F, M);
@@ -76,7 +81,8 @@ public class AlgorithmsHW3 {
   }
 
   // plot the graph using time_taken lists
-  public void plotGraph(List < List < Long >> time_taken_exponential, List < List < Long >> time_taken_linear, List < List < Long >> time_taken_log) {
+  public void plotGraph(List<List<Long>> time_taken_exponential, List<List<Long>> time_taken_linear,
+      List<List<Long>> time_taken_log) {
     System.out.println("Plotting the graph");
     System.out.println("X axis is for the fibonacci number and y axis is for time");
     System.out.println("For the first 30 fibonacci numbers using all three methods");
@@ -91,9 +97,11 @@ public class AlgorithmsHW3 {
   // plot a graph in cli using a 2d array
   // create a matrix of 30*max_time
   // fill the matrix with 0s
-  // for each time_taken list, fill the matrix with 1, 2, 3 for exponential, linear and logarithmic methods respectively
+  // for each time_taken list, fill the matrix with 1, 2, 3 for exponential,
+  // linear and logarithmic methods respectively
   // print the matrix
-  public void plotGraph2(List < List < Long >> time_taken_exponential, List < List < Long >> time_taken_linear, List < List < Long >> time_taken_log) {
+  public void plotGraph2(List<List<Long>> time_taken_exponential, List<List<Long>> time_taken_linear,
+      List<List<Long>> time_taken_log) {
     System.out.println("Plotting the graph");
     System.out.println("X axis is for the fibonacci number and y axis is for time");
     System.out.println("For the first 30 fibonacci numbers using all three methods");
@@ -117,7 +125,7 @@ public class AlgorithmsHW3 {
       }
     }
     // create a matrix of 30*max_time
-    int[][] matrix = new int[30][max_time+1];
+    int[][] matrix = new int[30][max_time + 1];
     // fill the matrix with 0s
     for (int i = 0; i < 30; i++) {
       for (int j = 0; j < max_time; j++) {
@@ -142,7 +150,7 @@ public class AlgorithmsHW3 {
     }
     // print the matrix
     for (int i = 0; i < 30; i++) {
-      for (int j = 0; j < max_time+1; j++) {
+      for (int j = 0; j < max_time + 1; j++) {
         if (matrix[i][j] == 0) {
           System.out.print(" ");
         } else if (matrix[i][j] == 1) {
@@ -161,8 +169,11 @@ public class AlgorithmsHW3 {
    * ***********************************************************************************************
    *
    * PROBLEM SET 2
-   * [20 points] You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
-   * Example Input: n = 3  Output: 3 | Explanation: (1 step + 1 step + 1 step), (1 step + 2 steps), and (2 steps + 1 step)
+   * [20 points] You are climbing a staircase. It takes n steps to reach the top.
+   * Each time you can either climb 1 or 2 steps. In how many distinct ways can
+   * you climb to the top?
+   * Example Input: n = 3 Output: 3 | Explanation: (1 step + 1 step + 1 step), (1
+   * step + 2 steps), and (2 steps + 1 step)
    *
    * [5 points] Print out the time take to find solution for n=0 to n=45
    ************************************************************************************************
@@ -181,29 +192,32 @@ public class AlgorithmsHW3 {
   }
 
   /**
-     * ***********************************************************************************************
-     *
-     * PROBLEM SET 3
-     *
-     * [20 points] Given a triangle array, return the minimum path sum from top to bottom.
-     * For each step, you may move to an adjacent number of the row below (if you are on index i on the current row, you may move to either index i or index i + 1 on the next row).
-     * Input: triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
-       Output: 11
-       Explanation: The triangle looks like:
-		   2
-		  3 4
-		 6 5 7
-		4 1 8 3
-     The minimum path sum from top to bottom is 2 + 3 + 5 + 1 = 11.
+   * ***********************************************************************************************
+   *
+   * PROBLEM SET 3
+   *
+   * [20 points] Given a triangle array, return the minimum path sum from top to
+   * bottom.
+   * For each step, you may move to an adjacent number of the row below (if you
+   * are on index i on the current row, you may move to either index i or index i
+   * + 1 on the next row).
+   * Input: triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
+   * Output: 11
+   * Explanation: The triangle looks like:
+   * 2
+   * 3 4
+   * 6 5 7
+   * 4 1 8 3
+   * The minimum path sum from top to bottom is 2 + 3 + 5 + 1 = 11.
+   * 
+   * [5 points]
+   * Print out the triangle (only for triangle with 4 levels) and the answer
+   * Print out the correct answer for all triangles (from level 1 to 40)
+   ************************************************************************************************
+   */
+  public int minimumTotal(List<List<Integer>> triangle) {
 
-     [5 points]
-     Print out the triangle (only for triangle with 4 levels) and the answer
-     Print out the correct answer for all triangles (from level 1 to 40)
-     ************************************************************************************************
-     */
-  public int minimumTotal(List < List < Integer >> triangle) {
-
-    if (triangle.size() <= 4){
+    if (triangle.size() <= 4) {
       System.out.println("The triangle looks like:");
       for (int i = 0; i < triangle.size(); i++) {
         for (int j = 0; j < triangle.get(i).size(); j++) {
@@ -215,7 +229,7 @@ public class AlgorithmsHW3 {
 
     int[] dp = new int[triangle.size() + 1];
     for (int i = triangle.size() - 1; i >= 0; i--) {
-      List < Integer > tlist = triangle.get(i);
+      List<Integer> tlist = triangle.get(i);
       for (int j = 0; j < tlist.size(); j++) {
         dp[j] = Math.min(dp[j], dp[j + 1]) + tlist.get(j);
       }
@@ -225,11 +239,11 @@ public class AlgorithmsHW3 {
 
   public static void main(String[] args) {
 
-    AlgorithmsHW3 ob = new AlgorithmsHW3();
+    FibonacciCalc ob = new FibonacciCalc();
     // save time taken at each input in a 2d list and draw graph
-    List < List < Long >> time_taken_exponential = new ArrayList < > ();
-    List < List < Long >> time_taken_linear = new ArrayList < > ();
-    List < List < Long >> time_taken_log = new ArrayList < > ();
+    List<List<Long>> time_taken_exponential = new ArrayList<>();
+    List<List<Long>> time_taken_linear = new ArrayList<>();
+    List<List<Long>> time_taken_log = new ArrayList<>();
     // Problem set 1
     System.out.println("Problem set 1");
     System.out.println("Fibonacci exponential");
@@ -239,7 +253,7 @@ public class AlgorithmsHW3 {
       long endTime = System.nanoTime();
       long duration = (endTime - startTime);
 
-      List < Long > temp = new ArrayList < > ();
+      List<Long> temp = new ArrayList<>();
       temp.add((long) i);
       temp.add(duration);
       time_taken_exponential.add(temp);
@@ -251,7 +265,7 @@ public class AlgorithmsHW3 {
       System.out.println(ob.fibonacci_linear(i));
       long endTime = System.nanoTime();
       long duration = (endTime - startTime);
-      List < Long > temp = new ArrayList < > ();
+      List<Long> temp = new ArrayList<>();
       temp.add((long) i);
       temp.add(duration);
       time_taken_linear.add(temp);
@@ -263,7 +277,7 @@ public class AlgorithmsHW3 {
       System.out.println(ob.fibonacci_log(i));
       long endTime = System.nanoTime();
       long duration = (endTime - startTime);
-      List < Long > temp = new ArrayList < > ();
+      List<Long> temp = new ArrayList<>();
       temp.add((long) i);
       temp.add(duration);
       time_taken_log.add(temp);
@@ -308,20 +322,20 @@ public class AlgorithmsHW3 {
     // Problem set 3
     System.out.println("Problem set 3");
     System.out.println("Minimum total");
-    List < List < Integer >> triangle = new ArrayList < > ();
-    List < Integer > tlist = new ArrayList < > ();
+    List<List<Integer>> triangle = new ArrayList<>();
+    List<Integer> tlist = new ArrayList<>();
     tlist.add(2);
     triangle.add(tlist);
-    tlist = new ArrayList < > ();
+    tlist = new ArrayList<>();
     tlist.add(3);
     tlist.add(4);
     triangle.add(tlist);
-    tlist = new ArrayList < > ();
+    tlist = new ArrayList<>();
     tlist.add(6);
     tlist.add(5);
     tlist.add(7);
     triangle.add(tlist);
-    tlist = new ArrayList < > ();
+    tlist = new ArrayList<>();
     tlist.add(4);
     tlist.add(1);
     tlist.add(8);
@@ -331,11 +345,11 @@ public class AlgorithmsHW3 {
 
     // triangle frm level 1 to 40
     for (int i = 1; i <= 40; i++) {
-      triangle = new ArrayList < > ();
+      triangle = new ArrayList<>();
       for (int j = 0; j < i; j++) {
-        tlist = new ArrayList < > ();
+        tlist = new ArrayList<>();
         for (int k = 0; k <= j; k++) {
-          tlist.add((int)(Math.random() * 1000) % 1000);
+          tlist.add((int) (Math.random() * 1000) % 1000);
         }
         triangle.add(tlist);
       }
